@@ -1,4 +1,4 @@
-# nodejs-yourmapswipe-workers
+# State: Early Open Sourced Version (Please report bugs)
 This repo contains 2 applications: The first one are the workers, the second one is the Mapswipe importer. Both run periodically.
 
 Note: We are aware that set-up is complicated right now, and we are raising funds for a stage 2 of Mapswipe (since this was all developed during a pilot phase), where we will have automated deployments. If you wish to contribute to this, please contact pete.masters@london.msf.org.
