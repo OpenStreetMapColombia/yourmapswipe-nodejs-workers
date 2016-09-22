@@ -50,13 +50,15 @@ CREATE TABLE `projects` (
 - Do a search in the project for YOUR-DOMAIN and replace all the occurances with your firebase domain. It's very important that you get ALL of them.
 - Do a search in the project for YOUR-MYSQL and replace all the occurances with your database credentials
 - In api_key.txt place your bing API key
-- Run the workers and the importer (make sure you have plenty of RAM available)
-```shell
-./run-importer.sh (to run the importer)
-./run-worker.sh (to run the worker)
-```
 - Now go to sample_importer/import.html, edit the firebase credentials to match your firebase objects, and after that's done, open the file in a browser, and import your first project!
-
+- Run the the importer (make sure you have plenty of RAM available)
+```shell
+./run-importer.sh
+```
+- Then finally, run the workers that count contributions etc. 
+```shell
+./run-worker.sh 
+```
 API Documentation for generated files in /var/www/html available on: https://docs.google.com/document/d/1RwN4BNhgMT5Nj9EWYRBWxIZck5iaawg9i_5FdAAderw/edit#heading=h.wp1a8ue6nwhv
 
 - If you want to allocate less memory (because you have smaller tasks) you can edit the --max-old-space-size=SIZE_IN_MB_YOU_NEED values
