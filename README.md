@@ -12,7 +12,7 @@ sh run-worker.sh || /bin/true
 ```
 
 #Requirements:
-- Make sure you have a firebase project and you have the sample data imported:
+- Make sure you have created a Firebase project on firebase.google.com
 - Make sure you have a MySQL database with the following tables:
 ```sql
 CREATE TABLE `projects` (
