@@ -43,16 +43,17 @@ CREATE TABLE `projects` (
 - Make sure you have the Node.js installed
 - Set up an nginx server and place the root on /var/www/html, create that directory if it doesn't exist yet, and make it writable for the user that will run this application. This is where your API will become available.
 - Follow the steps here: https://firebase.google.com/docs/server/setup
+- Also enable firebase auth so users can authenticate in the app
 - Add the new service account .json file in cfg/your-service-file.json. Do a search in the project for your-service-file.json and replace the name if you want to use the original file name.
 - Do a search in the project for YOUR-DOMAIN and replace all the occurances with your firebase domain. It's very important that you get ALL of them.
 - Do a search in the project for YOUR-MYSQL and replace all the occurances with your database credentials
 - In api_key.txt place your bing API key
-- Run it with the following commands:
-
+- Run the workers and the importer (make sure you have plenty of RAM available)
 ```shell
-sh run-importer.sh (to run the importer)
-sh run-worker.sh (to run the worker)
+./run-importer.sh (to run the importer)
+./run-worker.sh (to run the worker)
 ```
+- Now go to sample_importer/import.html, edit the firebase credentials to match your firebase objects, and after that's done, open the file in a browser, and import your first project!
 
 API Documentation for generated files in /var/www/html available on: https://docs.google.com/document/d/1RwN4BNhgMT5Nj9EWYRBWxIZck5iaawg9i_5FdAAderw/edit#heading=h.wp1a8ue6nwhv
 
