@@ -1,5 +1,7 @@
 # nodejs-yourmapswipe-workers
-This repo contains 2 applications: The first one are the workers, the second one is the Mapswipe importer. Both run periodically. Note: We are aware that set-up is complicated right now, and are raising funds for a stage 2 of Mapswipe, where we will have automated deployments. If you wish to contribute to this, please contact pete.masters@london.msf.org.
+This repo contains 2 applications: The first one are the workers, the second one is the Mapswipe importer. Both run periodically.
+
+Note: We are aware that set-up is complicated right now, and we are raising funds for a stage 2 of Mapswipe (since this was all developed during a pilot phase), where we will have automated deployments. If you wish to contribute to this, please contact pete.masters@london.msf.org.
 
 #Add the following to your rc.local file on linux to make it auto start if your server restarts:
 
@@ -59,3 +61,5 @@ API Documentation for generated files in /var/www/html available on: https://doc
 
 - If you want to allocate less memory (because you have smaller tasks) you can edit the --max-old-space-size=SIZE_IN_MB_YOU_NEED values
 
+#Contributing
+Contributions are welcome. Please fork the repository, test incredibly well on your end, and make a pull request once finished.
