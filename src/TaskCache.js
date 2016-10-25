@@ -126,7 +126,7 @@ class TaskCache {
             for(var project in this.taskCache) {
                 model.resetCurrentGroups(project);
                 var averageGroupSizeArray = [];
-                currentGroup = 0;
+                currentGroup = 100;
 
                 var xMin = parseFloat(this.taskCache[project].xMin);
                 var xMax = parseFloat(this.taskCache[project].xMax);
