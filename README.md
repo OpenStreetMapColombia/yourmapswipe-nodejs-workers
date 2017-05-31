@@ -51,6 +51,50 @@ CREATE TABLE `projects` (
 - Do a search in the project for YOUR-MYSQL and replace all the occurances with your database credentials
 - In api_key.txt place your bing API key
 - Now go to sample_importer/import.html, edit the firebase credentials to match your firebase objects, and after that's done, open the file in a browser, and import your first project!
+- Don't forget to set up rules for the classes in firebase. Should be like this:
+```{
+  "rules": {
+    ".read": false,
+    ".write": "auth != null",
+      "groups" : {
+        ".write": false,
+        ".read" : true,
+        "$project_id" : {
+          "$group_id" : {
+            "completedCount" : {
+              ".write": "auth != null",
+            }
+          },
+        ".indexOn": ["distributedCount", "completedCount"]
+        }
+      },
+      "imports" : {
+        ".read" : true,
+        ".write" : true
+      },
+     "projects" : {
+        ".write": false,
+        ".read" : true,
+      },
+    "results" : {
+      ".write": false,
+      ".read" : true,
+        "$task_id" : {
+          "$user_id" : {
+          ".write": "auth != null && auth.uid == $user_id"
+          }
+        }
+      },
+      "users": {
+      "$uid": {
+        ".read": "auth != null && auth.uid == $uid",
+        ".write": "auth != null && auth.uid == $uid",
+      }
+    }
+  }
+}
+```
+
 - Run the the importer (make sure you have plenty of RAM available)
 ```shell
 ./run-importer.sh
